@@ -3,7 +3,7 @@
 ## copyright (C) 2018 Lijun Wang <szcfweiya@gamil.com>
 ##
 ## This program is to simulate figure 4.2 in the book called The Elements of Statistical Learning.
-## You also can found the translated documents from https://esl.hohoweiya.xyz
+## You also can find the translated documents from https://esl.hohoweiya.xyz
 ##
 ## #############################################################################################
 
@@ -49,6 +49,15 @@ c2 = min(which(pred3 > pred2))
 # class 3: c2+1 ~ end
 # actually, c1 = c2
 err1 = (abs(c2 - 2*N) + abs(c1 - N))/(3*N)
+
+## Alternative method
+cl = numeric(3*N)
+for (i in 1:(3*N))
+{
+    cl[i] = which.max(c(pred1[i], pred2[i], pred3[i]))
+}
+truth = c(rep(1, N), rep(2, N), rep(3, N))
+err1 = sum(cl - truth != 0) / (3*N)
 
 ## reproduce figure 4.3 left
 png("reproduce-fig-4-3l.png")

@@ -6,7 +6,7 @@ pages:
       - 第一版序言: 'Preface/2016-07-21-Preface-to-the-First-Edition.md'
   - 上篇:
     - 1 简介:
-      - 1.1 导言: '01-Introduction/2016-07-26-Chapter-1-Introduction.md'
+      - 1.1 导言: '01-Introduction/1.1-Introduction.md'
     - 2 监督学习概要:
       - 2.1 导言: '02-Overview-of-Supervised-Learning/2.1-Introduction.md'
       - 2.2 变量类型和术语: '02-Overview-of-Supervised-Learning/2.2-Variable-Types-and-Terminology.md'
@@ -101,18 +101,20 @@ pages:
       - 文献笔记: '09-Additive-Models-Trees-and-Related-Methods/Bibliographic-Notes.md'
 
     - 10 增强和可加树:
-      - 10.1 boosting 方法: '10-Boosting-and-Additive-Trees/10.1-Boosting-Methods.md'
-      - 10.2 boosting 拟合可加模型:  '10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model.md'
+      - 10.1 Boosting 方法: '10-Boosting-and-Additive-Trees/10.1-Boosting-Methods.md'
+      - 10.2 Boosting 拟合可加模型:  '10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model.md'
       - 10.3 向前逐步加性建模: '10-Boosting-and-Additive-Trees/10.3-Forward-Stagewise-Additive-Modeling.md'
       - 10.4 指数损失和 AdaBoost: '10-Boosting-and-Additive-Trees/10.4-Exponential-Loss-and-AdaBoost.md'
       - 10.5 为什么是指数损失: '10-Boosting-and-Additive-Trees/10.5-Why-Exponential-Loss.md'
       - 10.6 损失函数和鲁棒性: '10-Boosting-and-Additive-Trees/10.6-Loss-Functions-and-Robustness.md'
       - 10.7 数据挖掘的现货方法: '10-Boosting-and-Additive-Trees/10.7-Off-the-Shelf-Procedures-for-Data-Mining.md'
       - 10.8 垃圾邮件的例子: '10-Boosting-and-Additive-Trees/10.8-Spam-Data.md'
-      - 10.9 boosting 树: '10-Boosting-and-Additive-Trees/10.9-Boosting-Trees.md'
+      - 10.9 Boosting 树: '10-Boosting-and-Additive-Trees/10.9-Boosting-Trees.md'
       - 10.10 Gradient Boosting 的数值优化: '10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting.md'
       - 10.11 大小合适的 boosting 树: '10-Boosting-and-Additive-Trees/10.11-Right-Sized-Trees-for-Boosting.md'
       - 10.12 正则化: '10-Boosting-and-Additive-Trees/10.12-Regularization.md'
+      - 10.13 解释性: '10-Boosting-and-Additive-Trees/10.13-Interpretation.md'
+      - 10.14 例子: '10-Boosting-and-Additive-Trees/10.14-Illustrations.md'
       - 文献笔记: '10-Boosting-and-Additive-Trees/Bibliographic-Notes.md'
 
     - 11 神经网络:
@@ -189,11 +191,11 @@ pages:
       - 文献笔记: '18-High-Dimensional-Problems/Bioliographic-Notes.md'
 
   - 个人笔记:
+    - 笔记列表: 
+      - 列表: 'notes/ipynb/list.md'
     - 习题解答: 
       - 索引: 'notes/manual.md'
       - 习题 Ex. 17.7: 'notes/Graph/ex-17-7.md'
-    - 笔记列表: 
-      - 列表: 'notes/ipynb/list.md'
     - 模拟实验:
       - 模拟 Fig. 3.18: 'notes/linear-reg/sim-3-18.md'
       - 模拟 Fig. 4.3: 'notes/LDA/sim-4-3.md'
@@ -201,6 +203,7 @@ pages:
       - 模拟 Fig. 5.9: 'notes/spline/sim-5-9.md'
       - 模拟 Fig. 7.3: 'notes/ModelSelection/sim7_3.md'
       - 模拟 Fig. 7.7: 'notes/ModelSelection/sim7_7.md'
+      - 模拟 Fig. 7.9: 'notes/ModelSelection/sim7_9.md'
       - 模拟 Fig. 13.5: 'notes/Prototype/sim13_5.md'
       - 模拟 Fig. 14.42: 'notes/ICA/sim14_42.md'
       - 模拟 Fig. 18.1: 'notes/HighDim/sim18_1.md'
@@ -215,6 +218,12 @@ pages:
       - 损失函数的梯度总结及 Julia 实现: 'notes/boosting/summary-loss-function.md'
       - R 语言中的多种决策树算法实现: 'notes/tree/various-classification-methods.md'
       - R 语言处理缺失数据: 'notes/missing-data/missing-data.md'
+      - B 样条在 R, Python, Cpp 中的实现: 'notes/BS/bs.md'
+  
+  - 索引: 
+    - 关键词: tag.md
+
+
 
 
 site_name: 'ESL CN'
@@ -236,7 +245,7 @@ edit_uri: ""
 
 #website_cn: 随笔
 
-copyright: 'Copyright &copy; 2016-2018 weiya'
+copyright: 'Copyright &copy; 2016-2020 weiya'
 
 markdown_extensions:
   - admonition
@@ -254,7 +263,7 @@ markdown_extensions:
 
 extra_css:
   - css/misc.css
-  - css/iDisqus.min.css
+#  - css/iDisqus190507.min.css
 #  - css/newsprint.css
 #  - css/admonition_fix.css
 
@@ -268,7 +277,7 @@ extra:
     - type: 'home'
       link: 'https://hohoweiya.xyz'
     - type: 'rss'
-      link: 'https://blog.hohoweiya.xyz'
+      link: 'https://stats.hohoweiya.xyz'
     - type: 'linkedin'
       link: 'https://www.linkedin.com/in/szcfweiya/'
     - type: 'envelope'
@@ -291,7 +300,7 @@ extra_templates:
 theme:
   name: null
   custom_dir: material
-  language: 'en'
+  language: 'zh-CN'
   feature:
     tabs: true
   logo: 'img/logo_white_24x24.svg'
@@ -313,5 +322,8 @@ google_analytics:
 use_directory_urls: false
 
 enable_search: true
+
+esl_url: 'https://web.stanford.edu/~hastie/ElemStatLearn/'
+# https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12.pdf
 
 #plugins: []
