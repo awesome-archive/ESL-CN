@@ -3,7 +3,7 @@
 原文     | [The Elements of Statistical Learning](../book/The Elements of Statistical Learning.pdf)
       ---|---
 翻译     | szcf-weiya
-时间     | 2016-07-20
+ 发布 | 2016-09-30 
 更新 | 2018-02-14
 状态| Done
 
@@ -46,7 +46,7 @@
 - 第十五章：随机森林
 - 第十六章：实例学习
 - 第十七章：无向图模型
-- 第十八章：高纬问题
+- 第十八章：高维问题
 
 **Some further notes:**
 

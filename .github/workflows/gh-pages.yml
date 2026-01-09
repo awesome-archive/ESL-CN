@@ -1,0 +1,35 @@
+name: gh-pages
+on: push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.7.13'
+        
+      - name: Install dependencies
+        run: |
+          pip install markdown==3.3.7
+          pip install git+https://github.com/szcf-weiya/mkdocs@patch-0.17.2-py37
+          pip install mkdocs-material==2.5.2  
+          pip install python-markdown-math
+          pip install pygments==2.3.1
+          pip install pymdown-extensions==9.1
+          pip install git+https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin.git
+      
+      - name: Build
+        run: |
+          python gentag.py
+          mkdocs build
+          mv rmds/_site/ site/rmds
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

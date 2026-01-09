@@ -7,8 +7,6 @@
   <head>
     {% block site_meta %}
       <meta charset="utf-8">
-      <!--dns prefetch-->
-      <link rel="dns-prefetch" href="//cdn.mathjax.org" />
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       {% if page and page.meta and page.meta.description %}
@@ -69,9 +67,28 @@
     {% block libs %}
       <script src="{{ base_url }}/assets/javascripts/modernizr.js"></script>
     {% endblock %}
+    {% block disqus_ads %}
+          <!--rm disqus ad refer to https://www.javaer101.com/article/25891160.html-->
+          <script src="{{ base_url }}/assets/javascripts/jquery-latest.min.js"></script>
+          <script>
+            (function($){
+              setInterval(() => {
+                  $.each($('iframe'), (arr,x) => {
+                      let src = $(x).attr('src');
+                      if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
+                          $(x).remove();
+                      }
+                      let title = $(x).attr('title');
+                      if (!src && title == "Disqus") {
+                        $(x).remove();
+                      }
+                  });
+              }, 300);
+          })(jQuery);
+          </script>   
+    {% endblock %}
     {% block disqus_js %}
       {% if config.extra.disqus and not page.is_homepage %}
-        <script src="{{ base_url }}/js/iDisqus0.min.js"></script>
       {% endif %}
     {% endblock %}
     {% block fonts %}
@@ -82,10 +99,16 @@
             }}">
         <style>body,input{font-family:"{{ font.text }}","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}","Courier New",Courier,monospace}</style>
       {% endif %}
-      <!--
-      <style>body,input{font-family:"lucida grande", "lucida sans unicode", lucida, 'Open Sans', helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
-      -->
-      <style>body,input{font-family:Optima, Segoe, “Segoe UI”, Candara, Calibri, Arial,source-han-serif-sc,'Source Han Serif SC','Source Han Serif CN','Source Han Serif TC','Source Han Serif TW','Source Han Serif','Songti SC','Microsoft YaHei',sans-serif}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
+      <style>
+      body, input {
+        font-family: Optima, Segoe, “Segoe UI”, Calibri, Arial, 'Source Han Serif SC', 'Source Han Serif', 'Songti SC', 'Microsoft YaHei', sans-serif;
+        }
+      code, kbd, pre {
+        font-family: Consolas, "Courier New", monospace;
+        }
+      blockquote {
+        font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, STKaiti, KaiTi, '楷体', SimKai, "DFKai-SB", NSimSun, serif;}
+      </style>
       <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
       <link rel="stylesheet" href="{{ base_url }}/css/icon.css">
       <link rel="stylesheet" href="{{ base_url }}/css/mini-awesome/font-awesome.css">
@@ -94,6 +117,17 @@
       <link rel="stylesheet" href="{{ path }}">
     {% endfor %}
     {% block extrahead %}{% endblock %}
+    <script src="{{ base_url }}/js/mathjax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KDYJ30F81"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3KDYJ30F81');
+    </script>
   </head>
   {% if palette.primary or palette.accent %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
@@ -186,7 +220,7 @@
               {% block disqus_free %}
                 {% if config.extra.disqus and not page.is_homepage %}
                   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
-                  {% include "partials/integrations/disqus_free.html" %}
+                  {% include "partials/integrations/disqus.html" %}
                 {% endif %}
               {% endblock %}
             </article>
@@ -199,7 +233,7 @@
     </div>
     {% block scripts %}
           <!--{% if config.enable_search %}-->
-    <script src="{{ base_url }}/assets/javascripts/application.js"></script>
+    <script src="{{ base_url }}/assets/javascripts/application.43ad2ac2.js"></script>
     <!--
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
@@ -231,15 +265,50 @@
         <script src="{{ path }}"></script>
       {% endfor %}
     -->
-    <script src="{{ base_url }}/js/mathjax.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="{{ base_url }}/js/baiduzhanzhang.js"></script>
-    <script src="{{ base_url }}/js/360.js"></script>
     {% endblock %}
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
       {% endif %}
     {% endblock %}
+    <!--adjust disqus recommendation width (possibly occupied by ads)-->
+    <script>
+// 确保在 DOM 完全加载后执行
+document.addEventListener('DOMContentLoaded', function() {
+    // 定义修复宽度的函数
+    function fixDisqusWidth() {
+        const iframe = document.querySelector('#disqus_recommendations iframe');
+        if (iframe) {
+            iframe.style.cssText += 'width: 100% !important; max-width: 100% !important;';
+        }
+    }
+
+    // 初次尝试修复
+    fixDisqusWidth();
+
+    // 监听 Disqus 容器的动态加载
+    const observer = new MutationObserver(function(mutations) {
+        fixDisqusWidth();
+    });
+
+    // 获取 Disqus 容器
+    const targetNode = document.getElementById('disqus_recommendations');
+    if (targetNode) {
+        // 如果容器已存在，直接监听
+        observer.observe(targetNode, { childList: true, subtree: true });
+    } else {
+        // 如果容器未加载，监听整个文档直到其出现
+        const docObserver = new MutationObserver(function(mutations) {
+            const lateTarget = document.getElementById('disqus_recommendations');
+            if (lateTarget) {
+                observer.observe(lateTarget, { childList: true, subtree: true });
+                docObserver.disconnect();
+            }
+        });
+        docObserver.observe(document.body, { childList: true, subtree: true });
+    }
+});
+    </script>
   </body>
 </html>

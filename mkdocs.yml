@@ -6,7 +6,7 @@ pages:
       - 第一版序言: 'Preface/2016-07-21-Preface-to-the-First-Edition.md'
   - 上篇:
     - 1 简介:
-      - 1.1 导言: '01-Introduction/2016-07-26-Chapter-1-Introduction.md'
+      - 1.1 导言: '01-Introduction/1.1-Introduction.md'
     - 2 监督学习概要:
       - 2.1 导言: '02-Overview-of-Supervised-Learning/2.1-Introduction.md'
       - 2.2 变量类型和术语: '02-Overview-of-Supervised-Learning/2.2-Variable-Types-and-Terminology.md'
@@ -66,7 +66,7 @@ pages:
       - 7.1 导言: '07-Model-Assessment-and-Selection/7.1-Introduction.md'
       - 7.2 偏差，方差和模型复杂度: '07-Model-Assessment-and-Selection/7.2-Bias-Variance-and-Model-Complexity.md'
       - 7.3 偏差-方差分解: '07-Model-Assessment-and-Selection/7.3-The-Bias-Variance-Decomposition.md'
-      - 7.4 测试误差率的 optimism: '07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate.md'
+      - 7.4 测试误差率的乐观偏差: '07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate.md'
       - 7.5 样本内预测误差的估计: '07-Model-Assessment-and-Selection/7.5-Estimates-of-In-Sample-Prediction-Error.md'
       - 7.6 参数的有效个数: '07-Model-Assessment-and-Selection/7.6-The-Effective-Number-of-Parameters.md'
       - 7.7 贝叶斯方法和 BIC: '07-Model-Assessment-and-Selection/7.7-The-Bayesian-Approach-and-BIC.md'
@@ -94,25 +94,27 @@ pages:
       - 9.1 广义可加模型: '09-Additive-Models-Trees-and-Related-Methods/9.1-Generalized-Additive-Models.md'
       - 9.2 基于树的方法: '09-Additive-Models-Trees-and-Related-Methods/9.2-Tree-Based-Methods.md'
       - 9.3 PRIM: '09-Additive-Models-Trees-and-Related-Methods/9.3-PRIM.md'
-      - 9.4 多变量自适应回归样条: '09-Additive-Models-Trees-and-Related-Methods/9.4-MARS.md'
+      - 9.4 多元自适应回归样条: '09-Additive-Models-Trees-and-Related-Methods/9.4-MARS.md'
       - 9.5 专家的分层混合: '09-Additive-Models-Trees-and-Related-Methods/9.5-Hierarchical-Mixtures-of-Experts.md'
       - 9.6 缺失数据: '09-Additive-Models-Trees-and-Related-Methods/9.6-Missing-Data.md'
       - 9.7 计算上的考虑: '09-Additive-Models-Trees-and-Related-Methods/9.7-Computational-Considerations.md'
       - 文献笔记: '09-Additive-Models-Trees-and-Related-Methods/Bibliographic-Notes.md'
 
     - 10 增强和可加树:
-      - 10.1 boosting 方法: '10-Boosting-and-Additive-Trees/10.1-Boosting-Methods.md'
-      - 10.2 boosting 拟合可加模型:  '10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model.md'
+      - 10.1 Boosting 方法: '10-Boosting-and-Additive-Trees/10.1-Boosting-Methods.md'
+      - 10.2 Boosting 拟合可加模型:  '10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model.md'
       - 10.3 向前逐步加性建模: '10-Boosting-and-Additive-Trees/10.3-Forward-Stagewise-Additive-Modeling.md'
       - 10.4 指数损失和 AdaBoost: '10-Boosting-and-Additive-Trees/10.4-Exponential-Loss-and-AdaBoost.md'
       - 10.5 为什么是指数损失: '10-Boosting-and-Additive-Trees/10.5-Why-Exponential-Loss.md'
       - 10.6 损失函数和鲁棒性: '10-Boosting-and-Additive-Trees/10.6-Loss-Functions-and-Robustness.md'
       - 10.7 数据挖掘的现货方法: '10-Boosting-and-Additive-Trees/10.7-Off-the-Shelf-Procedures-for-Data-Mining.md'
       - 10.8 垃圾邮件的例子: '10-Boosting-and-Additive-Trees/10.8-Spam-Data.md'
-      - 10.9 boosting 树: '10-Boosting-and-Additive-Trees/10.9-Boosting-Trees.md'
-      - 10.10 Gradient Boosting 的数值优化: '10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting.md'
+      - 10.9 Boosting 树: '10-Boosting-and-Additive-Trees/10.9-Boosting-Trees.md'
+      - 10.10 基于梯度提升的数值优化: '10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting.md'
       - 10.11 大小合适的 boosting 树: '10-Boosting-and-Additive-Trees/10.11-Right-Sized-Trees-for-Boosting.md'
       - 10.12 正则化: '10-Boosting-and-Additive-Trees/10.12-Regularization.md'
+      - 10.13 解释性: '10-Boosting-and-Additive-Trees/10.13-Interpretation.md'
+      - 10.14 例子: '10-Boosting-and-Additive-Trees/10.14-Illustrations.md'
       - 文献笔记: '10-Boosting-and-Additive-Trees/Bibliographic-Notes.md'
 
     - 11 神经网络:
@@ -130,8 +132,8 @@ pages:
       - 12.2 支持向量分类器: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.2-The-Support-Vector-Classifier.md'
       - 12.3 支持向量机和核: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.3-Support-Vector-Machines-and-Kernels.md'
       - 12.4 广义线性判别分析: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.4-Generalizing-Linear-Discriminant-Analysis.md'
-      - 12.5 FDA: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis.md'
-      - 12.6 PDA: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis.md'
+      - 12.5 灵活判别分析: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis.md'
+      - 12.6 惩罚判别分析: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis.md'
       - 12.7 混合判别分析: '12-Support-Vector-Machines-and-Flexible-Discriminants/12.7-Mixture-Discriminant-Analysis.md'
       - 计算上的考虑: '12-Support-Vector-Machines-and-Flexible-Discriminants/Computational-Considerations.md'
       - 文献笔记: '12-Support-Vector-Machines-and-Flexible-Discriminants/Bibliographic-Notes.md'
@@ -150,7 +152,7 @@ pages:
       - 14.2 关联规则: '14-Unsupervised-Learning/14.2-Association-Rules.md'
       - 14.3 聚类分析: '14-Unsupervised-Learning/14.3-Cluster-Analysis.md'
       - 14.4 自组织图: '14-Unsupervised-Learning/14.4-Self-Organizing-Maps.md'
-      - 14.5 主成分，主曲线以及主曲面: '14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces.md'
+      - 14.5 主成分、主曲线与主曲面: '14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces.md'
       - 14.6 非负矩阵分解: '14-Unsupervised-Learning/14.6-Non-negative-Matrix-Factorization.md'
       - 14.7 独立成分分析和探索投影寻踪: '14-Unsupervised-Learning/14.7-Independent-Component-Analysis-and-Exploratory-Projection-Pursuit.md'
       - 14.8 多维缩放: '14-Unsupervised-Learning/14.8-Multidimensional-Scaling.md'
@@ -189,25 +191,22 @@ pages:
       - 文献笔记: '18-High-Dimensional-Problems/Bioliographic-Notes.md'
 
   - 个人笔记:
-    - 习题解答: 
-      - 索引: 'notes/manual.md'
-      - 习题 Ex. 17.7: 'notes/Graph/ex-17-7.md'
     - 笔记列表: 
       - 列表: 'notes/ipynb/list.md'
-    - 模拟实验:
+    - 实验重现:
       - 模拟 Fig. 3.18: 'notes/linear-reg/sim-3-18.md'
       - 模拟 Fig. 4.3: 'notes/LDA/sim-4-3.md'
       - 模拟 Fig. 4.5: 'notes/LDA/sim-4-5.md'
       - 模拟 Fig. 5.9: 'notes/spline/sim-5-9.md'
       - 模拟 Fig. 7.3: 'notes/ModelSelection/sim7_3.md'
       - 模拟 Fig. 7.7: 'notes/ModelSelection/sim7_7.md'
+      - 模拟 Fig. 7.9: 'notes/ModelSelection/sim7_9.md'
       - 模拟 Fig. 13.5: 'notes/Prototype/sim13_5.md'
       - 模拟 Fig. 14.42: 'notes/ICA/sim14_42.md'
-      - 模拟 Fig. 18.1: 'notes/HighDim/sim18_1.md'
+      # - 模拟 Fig. 18.1: 'notes/HighDim/sim18_1.md'
       - 模拟 Eq. 10.2: 'notes/boosting/sim-eq-10-2.md'
       - 模拟 Tab. 12.2: 'notes/SVM/skin-of-the-orange.md'
       - 模拟 Fig. 9.7: 'notes/tree/sim-9-7.md'
-    - 算法实现:
       - 算法 Alg. 17.1: 'notes/Graph/alg-17-1.md'
     - 比较总结:
       - 估计高斯混合模型参数的三种方式: 'notes/Mixture-Gaussian.md'
@@ -215,6 +214,12 @@ pages:
       - 损失函数的梯度总结及 Julia 实现: 'notes/boosting/summary-loss-function.md'
       - R 语言中的多种决策树算法实现: 'notes/tree/various-classification-methods.md'
       - R 语言处理缺失数据: 'notes/missing-data/missing-data.md'
+      - B 样条在 R, Python, Cpp 中的实现: 'notes/BS/bs.md'
+  
+  - 索引: 
+    - 关键词: tag.md
+
+
 
 
 site_name: 'ESL CN'
@@ -227,7 +232,7 @@ site_url: https://esl.hohoweiya.xyz
 
 repo_name: 'szcf-weiya/ESL-CN'
 repo_url: 'https://github.com/szcf-weiya/ESL-CN'
-edit_uri: ""
+edit_uri: edit/master/docs/
 #url_en: https://stats.hohoweiya.xyz
 
 #url_cn: https://blog.hohoweiya.xyz
@@ -236,7 +241,7 @@ edit_uri: ""
 
 #website_cn: 随笔
 
-copyright: 'Copyright &copy; 2016-2018 weiya'
+copyright: 'Copyright &copy; 2016-2025 weiya'
 
 markdown_extensions:
   - admonition
@@ -249,12 +254,14 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.superfences
   - toc:
       permalink: true
 
+
 extra_css:
   - css/misc.css
-  - css/iDisqus.min.css
+#  - css/iDisqus190507.min.css
 #  - css/newsprint.css
 #  - css/admonition_fix.css
 
@@ -268,7 +275,7 @@ extra:
     - type: 'home'
       link: 'https://hohoweiya.xyz'
     - type: 'rss'
-      link: 'https://blog.hohoweiya.xyz'
+      link: 'https://stats.hohoweiya.xyz'
     - type: 'linkedin'
       link: 'https://www.linkedin.com/in/szcfweiya/'
     - type: 'envelope'
@@ -291,7 +298,7 @@ extra_templates:
 theme:
   name: null
   custom_dir: material
-  language: 'en'
+  language: 'zh-CN'
   feature:
     tabs: true
   logo: 'img/logo_white_24x24.svg'
@@ -314,4 +321,5 @@ use_directory_urls: false
 
 enable_search: true
 
-#plugins: []
+plugins: 
+  - git-revision-date
